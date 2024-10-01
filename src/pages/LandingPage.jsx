@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input";
 
 const LandingPage = () => {
   const [longUrl, setLongUrl] = useState("");
@@ -21,11 +22,11 @@ const LandingPage = () => {
         The only URL Shortener <br /> you&rsquo;ll ever need!
       </h2>
       <form onSubmit={handleShorten} className="flex gap-7 text-black justify-center items-center mx-auto sm:h-14 flex-col sm:flex-row w-full md:w-2/4">
-        <input
+        <Input
           value={longUrl}
           type="url"
           placeholder="Enter your loooong URL"
-          className=" flex-1 py-4 px-4 rounded-3xl font-mono"
+          className=" flex-1 py-4 px-4 rounded-3xl text-white font-mono"
           onChange={(e) => setLongUrl(e.target.value)}
         />
         <Button type="submit" variant="destructive">Shorten!</Button>
